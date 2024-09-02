@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Novo Agendamento</title>
+</head>
+<body>
+    <h1>Novo Agendamento</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Paciente:</label><br>
+        <select name="paciente">
+            {% for paciente in pacientes %}
+                <option value="{{ paciente.id }}">{{ paciente.nome }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label>Profissional:</label><br>
+        <select name="profissional">
+            {% for profissional in profissionais %}
+                <option value="{{ profissional.id }}">{{ profissional.nome }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label>Data e Hora:</label><br>
+        <input type="datetime-local" name="data_hora"><br><br>
+        
+        <label>Observações:</label><br>
+        <textarea name="observacoes"></textarea><br><br>
+        
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'lista_agendamentos' %}">Voltar para a lista de agendamentos</a>
+</body>
+</html>

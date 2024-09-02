@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Transação</title>
+</head>
+<body>
+    <h1>Editar Transação</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Descrição:</label><br>
+        <input type="text" name="descricao" value="{{ transacao.descricao }}"><br><br>
+        
+        <label>Valor:</label><br>
+        <input type="number" name="valor" step="0.01" value="{{ transacao.valor }}"><br><br>
+        
+        <label>Data:</label><br>
+        <input type="date" name="data" value="{{ transacao.data }}"><br><br>
+        
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'lista_transacoes' %}">Voltar para a lista de transações</a>
+</body>
+</html>

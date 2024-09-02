@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Pacientes</title>
+</head>
+<body>
+    <h1>Lista de Pacientes</h1>
+    <ul>
+        {% for paciente in pacientes %}
+            <li>
+                {{ paciente.nome }} - 
+                <a href="{% url 'editar_paciente' paciente.id %}">Editar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'novo_paciente' %}">Novo Paciente</a>
+</body>
+</html>

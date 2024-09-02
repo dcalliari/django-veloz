@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Profissional</title>
+</head>
+<body>
+    <h1>Editar Profissional</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Nome:</label><br>
+        <input type="text" name="nome" value="{{ profissional.nome }}"><br><br>
+        
+        <label>Especialidade:</label><br>
+        <input type="text" name="especialidade" value="{{ profissional.especialidade }}"><br><br>
+        
+        <label>Telefone:</label><br>
+        <input type="text" name="telefone" value="{{ profissional.telefone }}"><br><br>
+        
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'lista_profissionais' %}">Voltar para a lista de profissionais</a>
+</body>
+</html>

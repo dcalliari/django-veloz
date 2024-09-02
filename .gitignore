@@ -1,0 +1,9 @@
+clinica/__pycache__/
+agendamentos/__pycache__/
+agendamentos/migrations/__pycache__/
+financeiro/__pycache__/
+financeiro/migrations/__pycache__/
+pacientes/__pycache__/
+pacientes/migrations/__pycache__/
+profissionais/__pycache__/
+profissionais/migrations/__pycache__/
