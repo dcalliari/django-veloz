@@ -1,3 +1,4 @@
+.env
 clinica/__pycache__/
 agendamentos/__pycache__/
 agendamentos/migrations/__pycache__/
