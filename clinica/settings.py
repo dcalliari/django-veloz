@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "financeiro",
     "pacientes",
     "profissionais",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
