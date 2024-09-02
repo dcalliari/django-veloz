@@ -10,6 +10,7 @@
             <li>
                 {{ agendamento.paciente.nome }} com {{ agendamento.profissional.nome }} em {{ agendamento.data_hora }} - 
                 <a href="{% url 'editar_agendamento' agendamento.id %}">Editar</a>
+                <a href="{% url 'excluir_agendamento' agendamento.id %}" onclick="return confirm('Tem certeza que deseja excluir este agendamento?');">Excluir</a>
             </li>
         {% endfor %}
     </ul>

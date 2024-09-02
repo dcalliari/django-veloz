@@ -10,6 +10,7 @@
             <li>
                 {{ paciente.nome }} - 
                 <a href="{% url 'editar_paciente' paciente.id %}">Editar</a>
+                <a href="{% url 'excluir_paciente' paciente.id %}" onclick="return confirm('Tem certeza que deseja excluir este paciente?');">Excluir</a>
             </li>
         {% endfor %}
     </ul>
