@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <h1>Listar Profissionais</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Especialidade</th>
+                <th>Registro Profissional</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profissional in profissionais %}
+                <tr>
+                    <td>{{ profissional.nome }}</td>
+                    <td>{{ profissional.especialidade }}</td>
+                    <td>{{ profissional.registro_profissional }}</td>
+                    <td><a href="{% url 'clinica:editar_profissional' profissional.id %}">Editar</a></td>
+                    <td><a href="{% url 'clinica:excluir' 'profissional' profissional.id %}">Excluir</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

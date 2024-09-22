@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <h1>Listar Transações</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Paciente</th>
+                <th>Profissional</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transacao in transacoes %}
+                <tr>
+                    <td>{{ transacao.paciente }}</td>
+                    <td>{{ transacao.profissional }}</td>
+                    <td>{{ transacao.valor }}</td>
+                    <td>{{ transacao.tipo }}</td>
+                    <td>{{ transacao.descricao }}</td>
+                    <td>{{ transacao.data }}</td>
+                    <td><a href="{% url 'clinica:editar_transacao' transacao.id %}">Editar</a></td>
+                    <td><a href="{% url 'clinica:excluir' 'transacao' transacao.id %}">Excluir</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

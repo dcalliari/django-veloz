@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <h1>Listar Agendamentos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Paciente</th>
+                <th>Profissional</th>
+                <th>Data e Hora</th>
+                <th>Descrição</th>
+                <th>Confirmado</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for agendamento in agendamentos %}
+                <tr>
+                    <td>{{ agendamento.paciente }}</td>
+                    <td>{{ agendamento.profissional }}</td>
+                    <td>{{ agendamento.data_horario }}</td>
+                    <td>{{ agendamento.descricao }}</td>
+                    <td>{{ agendamento.confirmado }}</td>
+                    <td><a href="{% url 'clinica:editar_agendamento' agendamento.id %}">Editar</a></td>
+                    <td><a href="{% url 'clinica:excluir' 'agendamento' agendamento.id %}">Excluir</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
