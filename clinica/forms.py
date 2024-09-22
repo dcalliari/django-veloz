@@ -167,7 +167,8 @@ class AgendamentoForm(forms.ModelForm):
                     "placeholder": "Descrição do agendamento",
                 }
             ),
-            "confirmado": forms.CheckboxInput(
+            "confirmado": forms.Select(
+                choices=[(True, "Sim"), (False, "Não")],
                 attrs={
                     "class": "form-control",
                     "placeholder": "Agendamento confirmado",
