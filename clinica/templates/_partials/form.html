@@ -1,5 +1,7 @@
-<form method="POST">
+<form method="POST" class="needs-validation" novalidate>
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Cadastrar</button>
+    <div class="mb-3">
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>

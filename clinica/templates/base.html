@@ -2,50 +2,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinica</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    {% block stylesheets %}
-    {% endblock %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  {% block stylesheets %}
+  {% endblock %}
 </head>
 <body>
-    <header>
-        <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'clinica:home' %}">Home</a>
+  <div class="container">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'clinica:home' %}">Clínica Veloz</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="cadastrarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Cadastrar
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="cadastrarDropdown">
+                <li><a class="dropdown-item" href="{% url 'clinica:cadastrar_pacientes' %}">Pacientes</a></li>
+                <li><a class="dropdown-item" href="{% url 'clinica:cadastrar_profissionais' %}">Profissionais</a></li>
+                <li><a class="dropdown-item" href="{% url 'clinica:cadastrar_transacoes' %}">Transações</a></li>
+                <li><a class="dropdown-item" href="{% url 'clinica:cadastrar_agendamentos' %}">Agendamentos</a></li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'clinica:cadastrar_pacientes' %}">Cadastrar Pacientes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'clinica:cadastrar_profissionais' %}">Cadastrar Profissionais</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'clinica:cadastrar_transacoes' %}">Cadastrar Transações</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'clinica:cadastrar_agendamentos' %}">Cadastrar Agendamentos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'clinica:listar_pacientes' %}">Listar Pacientes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'clinica:listar_profissionais' %}">Listar Profissionais</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'clinica:listar_transacoes' %}">Listar Transações</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'clinica:listar_agendamentos' %}">Listar Agendamentos</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="listarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Listar
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="listarDropdown">
+                <li><a class="dropdown-item" href="{% url 'clinica:listar_pacientes' %}">Pacientes</a></li>
+                <li><a class="dropdown-item" href="{% url 'clinica:listar_profissionais' %}">Profissionais</a></li>
+                <li><a class="dropdown-item" href="{% url 'clinica:listar_transacoes' %}">Transações</a></li>
+                <li><a class="dropdown-item" href="{% url 'clinica:listar_agendamentos' %}">Agendamentos</a></li>
+              </ul>
             </li>
           </ul>
-    </header>
-    {% block content %}
-    {% endblock %}
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    {% block scripts %}
-    {% endblock %}
+          <a class="btn btn-outline-primary" href="/admin">Admin Access</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  {% block content %}
+  {% endblock %}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  {% block scripts %}
+  {% endblock %}
 </body>
 </html>

@@ -144,6 +144,7 @@ class AgendamentoForm(forms.ModelForm):
             "paciente",
             "profissional",
             "data_horario",
+            "descricao",
             "confirmado",
         ]
         widgets = {
@@ -159,6 +160,12 @@ class AgendamentoForm(forms.ModelForm):
                     "type": "datetime-local",
                     "class": "form-control datetimepicker-input",
                 },
+            ),
+            "descricao": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Descrição do agendamento",
+                }
             ),
             "confirmado": forms.CheckboxInput(
                 attrs={

@@ -1,27 +1,32 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
-{% block content%}
-    <h1>Listar Profissionais</h1>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Especialidade</th>
-                <th>Registro Profissional</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for profissional in profissionais %}
-                <tr>
-                    <td>{{ profissional.nome }}</td>
-                    <td>{{ profissional.especialidade }}</td>
-                    <td>{{ profissional.registro_profissional }}</td>
-                    <td><a href="{% url 'clinica:editar_profissional' profissional.id %}">Editar</a></td>
-                    <td><a href="{% url 'clinica:excluir' 'profissional' profissional.id %}">Excluir</a></td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Listar Profissionais</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover rounded">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Especialidade</th>
+                        <th>Registro Profissional</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for profissional in profissionais %}
+                        <tr>
+                            <td>{{ profissional.nome }}</td>
+                            <td>{{ profissional.especialidade }}</td>
+                            <td>{{ profissional.registro_profissional }}</td>
+                            <td>
+                                <a href="{% url 'clinica:editar_profissional' profissional.id %}" class="btn btn-primary btn-sm rounded-pill">Editar</a>
+                                <a href="{% url 'clinica:excluir' 'profissional' profissional.id %}" class="btn btn-danger btn-sm rounded-pill">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

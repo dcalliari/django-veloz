@@ -82,7 +82,7 @@ class EditarPaciente(UpdateView):
     template_name = "editar.html"
     model = Paciente
     form_class = PacienteForm
-    success_url = "/listar_pacientes"
+    success_url = "/listar-pacientes"
 
     def form_valid(self, form):
         paciente = form.save(commit=True)
@@ -93,7 +93,7 @@ class EditarProfissional(UpdateView):
     template_name = "editar.html"
     model = Profissional
     form_class = ProfissionalForm
-    success_url = "/listar_profissionais"
+    success_url = "/listar-profissionais"
 
     def form_valid(self, form):
         profissional = form.save(commit=True)
@@ -104,7 +104,7 @@ class EditarTransacao(UpdateView):
     template_name = "editar.html"
     model = Transacao
     form_class = TransacaoForm
-    success_url = "/listar_transacoes"
+    success_url = "/listar-transacoes"
 
     def form_valid(self, form):
         transacao = form.save(commit=True)
@@ -115,7 +115,7 @@ class EditarAgendamento(UpdateView):
     template_name = "editar.html"
     model = Agendamento
     form_class = AgendamentoForm
-    success_url = "/listar_agendamentos"
+    success_url = "/listar-agendamentos"
 
     def form_valid(self, form):
         agendamento = form.save(commit=True)
